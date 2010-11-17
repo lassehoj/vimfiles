@@ -20,6 +20,9 @@ set autoread
 set encoding=utf-8
 set autoindent
 
+" setup pathogen
+call pathogen#runtime_append_all_bundles() 
+
 " change into the working dir of the file upon entering a buffer
 autocmd BufEnter * lcd %:p:h
 
