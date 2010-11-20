@@ -1,3 +1,9 @@
+filetype off
+" setup pathogen
+call pathogen#runtime_append_all_bundles() 
+
+filetype indent on
+
 " Global options
 set number
 set ts=4
@@ -19,9 +25,6 @@ set nocp
 set autoread
 set encoding=utf-8
 set autoindent
-
-" setup pathogen
-call pathogen#runtime_append_all_bundles() 
 
 " change into the working dir of the file upon entering a buffer
 autocmd BufEnter * lcd %:p:h
@@ -88,7 +91,6 @@ filetype plugin on
 " set your grep program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
-filetype indent on
 
 let g:tex_flavor='latex'
 
@@ -99,5 +101,5 @@ let g:tex_flavor='latex'
 :au FileType tex set iskeyword+=:
 
 "syntax enable
-au BufNewFile,BufRead *.sablecc 		runtime ~/.vim/syntax/sablecc.vim
-au BufNewFile,BufRead *.aj		 		runtime ~/.vim/syntax/aspectj.vim
+:au BufNewFile,BufRead *.sablecc 		set syntax=sablecc
+:au BufNewFile,BufRead *.aj		 		set syntax=aspectj
