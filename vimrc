@@ -18,6 +18,7 @@ set scrolloff=5
 set showmatch
 set matchtime=10
 set autochdir
+set ignorecase
 set incsearch
 set hlsearch
 set showmatch
@@ -27,16 +28,13 @@ set encoding=utf-8
 set autoindent
 
 " change into the working dir of the file upon entering a buffer
-autocmd BufEnter * lcd %:p:h
+" autocmd BufEnter * lcd %:p:h
 
-" Always make vim the active window on open.
-augroup AutoForeground
- au!
- au BufReadPost * :call foreground()
-augroup END
-
+" you'll figure this one out yourself
 colorscheme desert
 
+" nicer statusline
+" set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 " Key re-maps
 map <c-l> :tabnext<enter>
@@ -46,6 +44,7 @@ inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 
+" move visually across lines - not actual lines
 nnoremap j gj
 nnoremap k gk
 
@@ -80,7 +79,7 @@ let g:miniBufExplModSelTarget = 1
 " autocmd  FocusLost  	*.tex   	:colorscheme desert
 
 
-" :au BufWinEnter *tex let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+" visual warning that your lines are too long in tex
 :au BufWinEnter *tex let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
 " invoke latex-suite when you open a .tex file
@@ -100,6 +99,7 @@ let g:tex_flavor='latex'
 " all the figure labels.
 :au FileType tex set iskeyword+=:
 
-"syntax enable
+
+" obscure syntax enable
 :au BufNewFile,BufRead *.sablecc 		set syntax=sablecc
 :au BufNewFile,BufRead *.aj		 		set syntax=aspectj
