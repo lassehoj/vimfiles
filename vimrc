@@ -26,6 +26,7 @@ set nocp
 set autoread
 set encoding=utf-8
 set autoindent
+set smartcase
 
 " change into the working dir of the file upon entering a buffer
 " autocmd BufEnter * lcd %:p:h
@@ -103,3 +104,7 @@ let g:tex_flavor='latex'
 " obscure syntax enable
 :au BufNewFile,BufRead *.sablecc 		set syntax=sablecc
 :au BufNewFile,BufRead *.aj		 		set syntax=aspectj
+:au BufNewFile,BufRead *.peep		 		set syntax=peepholes
+
+" tab all windows instead of just 10
+tab all
