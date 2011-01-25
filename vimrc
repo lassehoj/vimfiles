@@ -36,6 +36,7 @@ colorscheme desert
 
 " nicer statusline
 set statusline=%{fugitive#statusline()}%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set laststatus=2
 
 "
 " Key re-maps
