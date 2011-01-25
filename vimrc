@@ -35,8 +35,9 @@ set smartcase
 colorscheme desert
 
 " nicer statusline
-" set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set statusline=%{fugitive#statusline()}%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
+"
 " Key re-maps
 map <c-l> :tabnext<enter>
 map <c-h> :tabprevious<enter>
@@ -105,6 +106,11 @@ let g:tex_flavor='latex'
 :au BufNewFile,BufRead *.sablecc 		set syntax=sablecc
 :au BufNewFile,BufRead *.aj		 		set syntax=aspectj
 :au BufNewFile,BufRead *.peep		 		set syntax=peepholes
+
+:au BufNewFile,BufRead *.hs		 		set expandtab
+:au BufWinLeave *.hs	set noexpandtab 
+
+:au BufNewFile,BufRead *.j		 		set syntax=jasmin
 
 " tab all windows instead of just 10
 tab all
