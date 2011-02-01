@@ -35,8 +35,8 @@ set smartcase
 colorscheme desert
 
 " nicer statusline
-set statusline=%{fugitive#statusline()}%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 set laststatus=2
+set statusline=%{fugitive#statusline()}[%f]%m%r%h%w[%{&ff}]%y%=[%l/%L][%v]
 
 "
 " Key re-maps

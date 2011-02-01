@@ -1,3 +1,5 @@
+set laststatus=2
+
 filetype indent on
 let g:miniBufExplMapWindowNavVim = 0
 let g:miniBufExplMapWindowNavArrows = 0
