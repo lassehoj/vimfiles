@@ -5,28 +5,24 @@ call pathogen#runtime_append_all_bundles()
 filetype indent on
 
 " Global options
-set number
-set ts=4
-set sw=4
-set noexpandtab
+set autochdir
+set autoindent
+set autoread
 set cursorline
-set ai
 set encoding=utf-8 
 set fileencoding=utf-8
-set nocompatible
-set scrolloff=5
-set showmatch
-set matchtime=10
-set autochdir
+set hlsearch
 set ignorecase
 set incsearch
-set hlsearch
+set matchtime=10
+set nocompatible
+set noexpandtab
+set number
+set scrolloff=5
 set showmatch
-set nocp 
-set autoread
-set encoding=utf-8
-set autoindent
 set smartcase
+set sw=4
+set ts=4
 
 " change into the working dir of the file upon entering a buffer
 " autocmd BufEnter * lcd %:p:h
@@ -63,23 +59,13 @@ cmap w!! %!sudo tee > /dev/null %
 
 "Quickly open the file explorer in the current working dir.
 map <silent> <F8>   :Vexplore<CR>
-map <silent> <S-F8> :sp +Vexplore<CR>
-
-" miniBufExplorer options
-let g:miniBufExplMapWindowNavVim = 0
-let g:miniBufExplMapWindowNavArrows = 0
-let g:miniBufExplMapCTabSwitchBufs = 0
-let g:miniBufExplModSelTarget = 1
+map <silent> <S-F8> :Explore<CR>
  
 " Tex options and tweaks.
 :au FileType tex set formatoptions+=t
 :au FileType tex set formatprg=par\ -w80
 :au FileType tex set textwidth=80
 :au FileType tex iab aling align
-":au BufWinEnter *tex colorscheme evening
-":au BufWinLeave *tex colorscheme desert
-" autocmd  FocusGained  	*.tex   	:colorscheme evening
-" autocmd  FocusLost  	*.tex   	:colorscheme desert
 
 
 " visual warning that your lines are too long in tex
@@ -104,14 +90,17 @@ let g:tex_flavor='latex'
 
 
 " obscure syntax enable
-:au BufNewFile,BufRead *.sablecc 		set syntax=sablecc
-:au BufNewFile,BufRead *.aj		 		set syntax=aspectj
-:au BufNewFile,BufRead *.peep		 		set syntax=peepholes
+:au BufNewFile,BufRead *.sablecc		set syntax=sablecc
+:au BufNewFile,BufRead *.aj				set syntax=aspectj
+:au BufNewFile,BufRead *.peep				set syntax=peepholes
 
-:au BufNewFile,BufRead *.hs		 		set expandtab
+:au BufNewFile,BufRead *.hs				set expandtab
 :au BufWinLeave *.hs	set noexpandtab 
 
-:au BufNewFile,BufRead *.j		 		set syntax=jasmin
+:au BufNewFile,BufRead *.j				set syntax=jasmin
 
 " tab all windows instead of just 10
 tab all
+
+
+set lazyredraw			" don't redraw while running macros - much faster
