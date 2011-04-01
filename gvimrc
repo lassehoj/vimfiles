@@ -1,5 +1,7 @@
 set laststatus=2
 
+colorscheme desert
+
 filetype indent on
 let g:miniBufExplMapWindowNavVim = 0
 let g:miniBufExplMapWindowNavArrows = 0

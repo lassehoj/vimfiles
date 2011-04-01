@@ -28,7 +28,7 @@ set ts=4
 " autocmd BufEnter * lcd %:p:h
 
 " you'll figure this one out yourself
-colorscheme desert
+colorscheme solarized
 
 " nicer statusline
 set laststatus=2
