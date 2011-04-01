@@ -28,7 +28,7 @@ set ts=4
 " autocmd BufEnter * lcd %:p:h
 
 " you'll figure this one out yourself
-colorscheme solarized
+colorscheme desert
 
 " nicer statusline
 set laststatus=2
@@ -104,3 +104,4 @@ tab all
 
 
 set lazyredraw			" don't redraw while running macros - much faster
+
