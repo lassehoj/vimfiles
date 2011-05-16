@@ -102,6 +102,8 @@ let g:tex_flavor='latex'
 " tab all windows instead of just 10
 tab all
 
+" don't redraw while running macros - much faster
+set lazyredraw
 
-set lazyredraw			" don't redraw while running macros - much faster
-
+" syntax highlighting for nesC files
+:au BufNewFile,BufRead *.nc set filetype=c
