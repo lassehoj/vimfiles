@@ -8,19 +8,23 @@ function printStat {
 	fi
 }
 
-for i in _*
-do 
-	source="${PWD}/$i"
-	target="${HOME}/${i/_/.}"
-	ln -sf ${source} ${target}
-	printStat "ln -sf ${source} ${target}"
-done
-
-source="${PWD}"
 target="${HOME}/.vim"
+
+# Link the directory
+source="${PWD}"
 ln -sf ${source} ${target}
 printStat "ln -sf ${source} ${target}"
 
+# Link all files beginning with a "_"
+for i in _*
+do
+	source="${PWD}/$i"
+	fileTarget="${target}/${i/_/.}"
+	ln -sf ${source} ${fileTarget}
+	printStat "ln -sf ${source} ${fileTarget}"
+done
+
+# Init and update all submodules
 git submodule init
 git submodule update
 git submodule foreach git pull origin master
