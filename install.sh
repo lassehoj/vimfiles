@@ -8,12 +8,12 @@ function printStat {
 	fi
 }
 
-target="${HOME}/.vim"
+target="${HOME}"
 
 # Link the directory
 source="${PWD}"
-ln -sf ${source} ${target}
-printStat "ln -sf ${source} ${target}"
+ln -sf ${source} ${target}/.vim
+printStat "ln -sf ${source} ${target}/.vim"
 
 # Link all files beginning with a "_"
 for i in _*
@@ -28,3 +28,4 @@ done
 git submodule init
 git submodule update
 git submodule foreach git pull origin master
+
