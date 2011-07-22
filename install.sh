@@ -1,5 +1,10 @@
 #!/bin/bash
 
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+
+ATTR_RESET=$(tput sgr0)
+
 function printStat {
 	if [ $? == 0 ]; then
 		echo "[${GREEN}   OK   ${ATTR_RESET}]" $1
