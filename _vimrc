@@ -58,8 +58,8 @@ map L $
 cmap w!! %!sudo tee > /dev/null %
 
 "Quickly open the file explorer in the current working dir.
-map <silent> <F8>   :Vexplore<CR>
-map <silent> <F9> :Explore<CR>
+map <silent> <C-E>   :Vexplore<CR>
+map <silent> <C-F> :Sexplore<CR>
  
 " Tex options and tweaks.
 :au FileType tex set formatoptions+=t
