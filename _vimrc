@@ -90,9 +90,13 @@ let g:tex_flavor='latex'
 
 
 " obscure syntax enable
-:au BufNewFile,BufRead *.sablecc		set syntax=sablecc
-:au BufNewFile,BufRead *.aj				set syntax=aspectj
+:au BufNewFile,BufRead *.sablecc			set syntax=sablecc
+:au BufNewFile,BufRead *.aj					set syntax=aspectj
 :au BufNewFile,BufRead *.peep				set syntax=peepholes
+:au BufNewFile,BufRead *.ts 				setlocal filetype=typoscript
+:au BufNewFile,BufRead setup.* 				setlocal filetype=typoscript
+:au BufNewFile,BufRead ext_typoscript_*		setlocal filetype=typoscript
+
 
 :au BufNewFile,BufRead *.hs				set expandtab
 :au BufWinLeave *.hs	set noexpandtab 
