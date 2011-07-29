@@ -23,6 +23,7 @@ set showmatch
 set smartcase
 set sw=4
 set ts=4
+syntax on
 
 " change into the working dir of the file upon entering a buffer
 " autocmd BufEnter * lcd %:p:h
