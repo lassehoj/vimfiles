@@ -25,6 +25,9 @@ set sw=4
 set ts=4
 syntax on
 
+" Diff settings
+set diffopt+=iwhite
+
 " change into the working dir of the file upon entering a buffer
 " autocmd BufEnter * lcd %:p:h
 
@@ -39,10 +42,10 @@ set statusline=%{fugitive#statusline()}[%f]%m%r%h%w[%{&ff}]%y%=[%l/%L][%v]
 " Key re-maps
 map <c-l> :tabnext<enter>
 map <c-h> :tabprevious<enter>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
+" inoremap <Left>  <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Up>    <NOP>
+" inoremap <Down>  <NOP>
 
 " move visually across lines - not actual lines
 nnoremap j gj
