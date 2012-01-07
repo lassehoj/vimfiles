@@ -23,6 +23,10 @@ set showmatch
 set smartcase
 set sw=4
 set ts=4
+syntax on
+
+" Diff settings
+set diffopt+=iwhite
 
 " change into the working dir of the file upon entering a buffer
 " autocmd BufEnter * lcd %:p:h
@@ -38,10 +42,10 @@ set statusline=%{fugitive#statusline()}[%f]%m%r%h%w[%{&ff}]%y%=[%l/%L][%v]
 " Key re-maps
 map <c-l> :tabnext<enter>
 map <c-h> :tabprevious<enter>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
+" inoremap <Left>  <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Up>    <NOP>
+" inoremap <Down>  <NOP>
 
 " move visually across lines - not actual lines
 nnoremap j gj
@@ -58,8 +62,8 @@ map L $
 cmap w!! %!sudo tee > /dev/null %
 
 "Quickly open the file explorer in the current working dir.
-map <silent> <F8>   :Vexplore<CR>
-map <silent> <F9> :Explore<CR>
+map <silent> <C-E>   :Vexplore<CR>
+map <silent> <C-F> :Sexplore<CR>
  
 " Tex options and tweaks.
 :au FileType tex set formatoptions+=t
@@ -90,9 +94,13 @@ let g:tex_flavor='latex'
 
 
 " obscure syntax enable
-:au BufNewFile,BufRead *.sablecc		set syntax=sablecc
-:au BufNewFile,BufRead *.aj				set syntax=aspectj
+:au BufNewFile,BufRead *.sablecc			set syntax=sablecc
+:au BufNewFile,BufRead *.aj					set syntax=aspectj
 :au BufNewFile,BufRead *.peep				set syntax=peepholes
+:au BufNewFile,BufRead *.ts 				setlocal filetype=typoscript
+:au BufNewFile,BufRead setup.* 				setlocal filetype=typoscript
+:au BufNewFile,BufRead ext_typoscript_*		setlocal filetype=typoscript
+
 
 :au BufNewFile,BufRead *.hs				set expandtab
 :au BufWinLeave *.hs	set noexpandtab 
