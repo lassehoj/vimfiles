@@ -47,12 +47,16 @@ inoremap <Down>  <NOP>
 nnoremap j gj
 nnoremap k gk
 
+" Dont open help when pressing F1
 map <F1> <Esc>
 imap <F1> <Esc>
 cmap <F1> <Esc>
 
 map H ^
 map L $
+
+" Clear highlight with comma
+map , :nohl<enter>
 
 " use w!! to save a file with superuser rights.
 cmap w!! %!sudo tee > /dev/null %
