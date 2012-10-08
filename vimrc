@@ -5,6 +5,7 @@ call pathogen#runtime_append_all_bundles()
 filetype indent on
 
 " Global options
+syntax on
 set autochdir
 set autoindent
 set autoread
