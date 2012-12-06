@@ -1,18 +1,24 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+	ignore = dirty
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+	ignore = dirty
 [submodule "bundle/vim-align"]
 	path = bundle/vim-align
 	url = git://github.com/tsaleh/vim-align.git
+	ignore = dirty
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	ignore = dirty
 [submodule "bundle/solarized-colorscheme"]
 	path = bundle/solarized-colorscheme
 	url = git://github.com/altercation/vim-colors-solarized.git
+	ignore = dirty
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+	ignore = dirty
