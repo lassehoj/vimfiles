@@ -1,6 +1,7 @@
 filetype off
 " setup pathogen
-call pathogen#runtime_append_all_bundles() 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 filetype indent on
 
@@ -9,7 +10,7 @@ set autochdir
 set autoindent
 set autoread
 set cursorline
-set encoding=utf-8 
+set encoding=utf-8
 set fileencoding=utf-8
 set hlsearch
 set ignorecase
@@ -51,6 +52,10 @@ map <c-h> :tabprevious<enter>
 nnoremap j gj
 nnoremap k gk
 
+nnoremap å I\item <ESC>
+vmap å I\item <ESC>
+nnoremap ø o\item
+
 map <F1> <Esc>
 imap <F1> <Esc>
 cmap <F1> <Esc>
@@ -64,12 +69,16 @@ cmap w!! %!sudo tee > /dev/null %
 "Quickly open the file explorer in the current working dir.
 map <silent> <C-E>   :Vexplore<CR>
 map <silent> <C-F> :Sexplore<CR>
- 
+
 " Tex options and tweaks.
 :au FileType tex set formatoptions+=t
 :au FileType tex set formatprg=par\ -w80
 :au FileType tex set textwidth=80
+:au FileType tex set spell
+:au FileType tex set spelllang=en,da
 :au FileType tex iab aling align
+:au FileType tex so ~/.vim/bundle/vim-latex/ftplugin/tex_latexSuite.vim
+let g:Tex_HotKeyMappings='align*,itemize,enumerate'
 
 
 " visual warning that your lines are too long in tex
@@ -100,10 +109,12 @@ let g:tex_flavor='latex'
 :au BufNewFile,BufRead *.ts 				setlocal filetype=typoscript
 :au BufNewFile,BufRead setup.* 				setlocal filetype=typoscript
 :au BufNewFile,BufRead ext_typoscript_*		setlocal filetype=typoscript
+:au BufNewFile,BufRead *.status				set syntax=status
+:au BufNewFile,BufRead *.status				set filetype=status
 
 
 :au BufNewFile,BufRead *.hs				set expandtab
-:au BufWinLeave *.hs	set noexpandtab 
+:au BufWinLeave *.hs	set noexpandtab
 
 :au BufNewFile,BufRead *.j				set syntax=jasmin
 
@@ -115,3 +126,6 @@ set lazyredraw
 
 " syntax highlighting for nesC files
 :au BufNewFile,BufRead *.nc set filetype=c
+
+" no folding
+set nofoldenable
